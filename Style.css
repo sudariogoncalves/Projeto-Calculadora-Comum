@@ -8,3 +8,6 @@
     font-weight: bold;
   }
   
+  .borda{
+    border-style: solido;
+  }

@@ -48,11 +48,11 @@
 </head>
 
 <body class="fundodetela" ><br><br><br>
-    <h1 align=center>Calculadora Comum</h1><br><br><br>
-    <form  >
-        
-        <input type=text style="text-align:center; height:40px" class="botoes" readOnly=true  id="valT" size=58 > 
-        <input type=button  class="botoes" style="height:45px" value="                      C - Limpar                      " onclick="limpar()"><br><br>
+    <h1 align=center>Calculadora Comum</h1><br><br>
+    <form>
+        <div class="borda" >
+        <input type=text style="text-align:center; height:40px; border-style: medium" readOnly=true  id="valT" size=62 > 
+        <input type=button  class="botoes" style="height:20px" value="                      C - Limpar                      " onclick="limpar()"><br><br>
         <input type=button  class="botoes" onclick="incluir('9')"  value="                 9                  ">
         <input type=button  class="botoes" onclick="incluir('8')"  value="                 8                  ">
         <input type=button  class="botoes" onclick="incluir('7')"  value="                 7                  ">
@@ -73,7 +73,7 @@
         <input type=button  class="botoes" disabled=true id="id="  value="                  =                  " onclick="resultado()">
         <input type=button  class="botoes" disabled=true id="id/"  value="                              /                               " onclick="incluir('/')"><br><br>
        <br><br>
-    
+    </div>
        <footer>Direitos reservados a: Sudário O Gonçalves - 4ºPeriodo - UNA/Contagem - 01/2023
     </footer>
         
