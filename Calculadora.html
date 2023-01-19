@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora</title>
+
+    <div align=right>
+        <script>
+                
+        /*Atribuição de data ao sistema*/
+        hoje = new Date() 
+        dia = hoje.getDate()
+        mes = hoje.getMonth() + 1
+        ano = hoje.getYear() + 1900
+        document.write("<h3>Data: " + dia + "/" + mes + "/" + ano + "</h3>")
+         
+        </script>
+    </div>
+        <script>
+
+        function incluir(conteudo) { /*abre a caixa de inclussão ao valor do conteudo do botão*/
+            document.getElementById("valT").value += conteudo;
+            document.getElementById("id+").disabled=false;
+            document.getElementById("id-").disabled=false;
+            document.getElementById("id*").disabled=false;
+            document.getElementById("id.").disabled=false;
+            document.getElementById("id=").disabled=false;
+            document.getElementById("id/").disabled=false;
+        }
+
+        function limpar() {
+            document.getElementById("valT").value = "";
+            document.getElementById("id+").disabled=true;
+            document.getElementById("id-").disabled=true;
+            document.getElementById("id*").disabled=true;
+            document.getElementById("id.").disabled=true;
+            document.getElementById("id=").disabled=true;
+            document.getElementById("id/").disabled=true;
+        }
+
+        function resultado() {/*eval transforma o conteudo da caixa de inclusão em expressão aritmetica*/
+            document.getElementById("valT").value = eval(document.getElementById("valT").value);
+        }
+    </script>
+</head>
+
+<body class="fundodetela" ><br><br><br>
+    <h1 align=center>Calculadora Comum</h1><br><br><br>
+    <form  >
+        
+        <input type=text style="text-align:center; height:40px" class="botoes" readOnly=true  id="valT" size=58 > 
+        <input type=button  class="botoes" style="height:45px" value="                      C - Limpar                      " onclick="limpar()"><br><br>
+        <input type=button  class="botoes" onclick="incluir('9')"  value="                 9                  ">
+        <input type=button  class="botoes" onclick="incluir('8')"  value="                 8                  ">
+        <input type=button  class="botoes" onclick="incluir('7')"  value="                 7                  ">
+        <input type=button  class="botoes" disabled=true id="id+"  value="                              +                              " onclick="incluir('+')"> <br><br>
+
+        <input type=button  class="botoes" onclick="incluir('6')"  value="                 6                  ">
+        <input type=button  class="botoes" onclick="incluir('5')"  value="                 5                  ">
+        <input type=button  class="botoes" onclick="incluir('4')"  value="                 4                  "> 
+        <input type=button  class="botoes" disabled=true id="id-"  value="                              -                               " onclick="incluir('-')"><br><br>
+
+        <input type=button  class="botoes" onclick="incluir('3')"  value="                 3                  ">
+        <input type=button  class="botoes" onclick="incluir('2')"  value="                 2                  "> 
+        <input type=button  class="botoes" onclick="incluir('1')"  value="                 1                  "> 
+        <input type=button  class="botoes" disabled=true id="id*"  value="                              *                               " onclick="incluir('*')"><br><br>
+        
+        <input type=button  class="botoes" onclick="incluir('0')"  value="                 0                  ">
+        <input type=button  class="botoes" disabled=true id="id." onclick="incluir('.')"  value="                  .                  "> 
+        <input type=button  class="botoes" disabled=true id="id="  value="                  =                  " onclick="resultado()">
+        <input type=button  class="botoes" disabled=true id="id/"  value="                              /                               " onclick="incluir('/')"><br><br>
+       <br><br>
+    
+       <footer>Direitos reservados a: Sudário O Gonçalves - 4ºPeriodo - UNA/Contagem - 01/2023
+    </footer>
+        
+    </form>
+
+    
+
+</body>
+
+</html>
