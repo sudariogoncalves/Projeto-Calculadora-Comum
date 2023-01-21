@@ -29,6 +29,11 @@
             document.getElementById("id.").disabled=false;
             document.getElementById("id=").disabled=false;
             document.getElementById("id/").disabled=false;
+            document.getElementById("idsqrt").disabled=false;
+            document.getElementById("idseno").disabled=false;
+            document.getElementById("idcoseno").disabled=false;
+            document.getElementById("idtangente").disabled=false;
+            document.getElementById("idexponencial").disabled=false;
         }
 
         function limpar() {
@@ -39,16 +44,52 @@
             document.getElementById("id.").disabled=true;
             document.getElementById("id=").disabled=true;
             document.getElementById("id/").disabled=true;
+            document.getElementById("idsqrt").disabled=true;
+            document.getElementById("idseno").disabled=true;
+            document.getElementById("idcoseno").disabled=true;
+            document.getElementById("idtangente").disabled=true;
+            document.getElementById("idexponencial").disabled=true;
         }
+
+
 
         function resultado() {/*eval transforma o conteudo da caixa de inclusão em expressão aritmetica*/
             document.getElementById("valT").value = eval(document.getElementById("valT").value);
+        }
+
+        function raiz() {
+            a=document.getElementById("valT").value;
+            document.getElementById("valT").value = Math.sqrt(parseInt(a));
+        } 
+
+        function seno() {
+            a=parseInt(document.getElementById("valT").value)*(Math.PI/180);
+            document.getElementById("valT").value = Math.sin(a);
+        } 
+
+        function coseno() {
+            a=parseInt(document.getElementById("valT").value)*(Math.PI/180);
+            document.getElementById("valT").value = Math.cos(a);
+        } 
+
+        function tangente() {
+            a=parseInt(document.getElementById("valT").value)*(Math.PI/180);
+            document.getElementById("valT").value = Math.tan(a);
+        } 
+
+        function exponencial() {
+            a=document.getElementById("valT").value;
+            document.getElementById("valT").value = Math.exp(parseInt(a));
+        } 
+
+        function SairDoSitema() {
+            window.close();
         }
     </script>
 </head>
 
 <body class="fundodetela" ><br><br><br>
-    <h1 align=center>Calculadora Comum</h1><br><br>
+    <h1 align=center>Calculadora</h1>
     <form>
         <div class="borda" >
         <input type=text style="text-align:center; height:40px; border-style: medium" readOnly=true  id="valT" size=62 > 
@@ -72,8 +113,18 @@
         <input type=button  class="botoes" disabled=true id="id." onclick="incluir('.')"  value="                  .                  "> 
         <input type=button  class="botoes" disabled=true id="id="  value="                  =                  " onclick="resultado()">
         <input type=button  class="botoes" disabled=true id="id/"  value="                              /                               " onclick="incluir('/')"><br><br>
-       <br><br>
+       
+        <input type=button  class="botoes" disabled=true id="idsqrt"  value="             Raiz(2)             " onclick="raiz()">
+        <input type=button  class="botoes" disabled=true id="idseno"  value="             Seno               " onclick="seno()">
+        <input type=button  class="botoes" disabled=true id="idcoseno"  value="            Coseno             " onclick="coseno()">
+        <input type=button  class="botoes" disabled=true id="idtangente"  value="     Tangente      " onclick="tangente()">
+        <input type=button  class="botoes" disabled=true id="idexponencial"  value="    Exponencial    " onclick="exponencial()">
+
+        <br><br><br>
     </div>
+
+    <input type=button class="botoes" onclick="SairDoSitema()" value="                  Sair do sistema                    "><br><br><br>
+
        <footer>Direitos reservados a: Sudário O Gonçalves - 4ºPeriodo - UNA/Contagem - 01/2023
     </footer>
         
